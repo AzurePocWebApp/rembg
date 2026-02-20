@@ -9,6 +9,8 @@ RUN apt-get update && apt-get install -y curl git && apt-get clean && rm -rf /va
 
 COPY . .
 
+ENV POETRY_DYNAMIC_VERSIONING_BYPASS=0.0.0
+
 RUN poetry config virtualenvs.create false && \
     poetry install --extras "cpu cli" --without dev
 
