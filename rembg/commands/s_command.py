@@ -103,7 +103,7 @@ def s_command(port: int, host: str, log_level: str, threads: int) -> None:
             self,
             model: str = Query(
                 description="Model to use when processing image",
-                regex=r"(" + "|".join(sessions_names) + ")",
+                pattern=r"(" + "|".join(sessions_names) + ")",
                 default="u2net",
             ),
             a: bool = Query(default=False, description="Enable Alpha Matting"),
@@ -148,7 +148,7 @@ def s_command(port: int, host: str, log_level: str, threads: int) -> None:
             self,
             model: str = Form(
                 description="Model to use when processing image",
-                regex=r"(" + "|".join(sessions_names) + ")",
+                pattern=r"(" + "|".join(sessions_names) + ")",
                 default="u2net",
             ),
             a: bool = Form(default=False, description="Enable Alpha Matting"),
